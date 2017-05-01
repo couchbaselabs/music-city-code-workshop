@@ -1,0 +1,8 @@
+<ActionBar title="{N} MCC Example">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+</ActionBar>
+<StackLayout>
+    <TextField hint="Title" [(ngModel)]="movie.title"></TextField>
+    <TextField hint="Genre" [(ngModel)]="movie.genre"></TextField>
+    <Button text="Save" class="btn btn-primary" (tap)="save()"></Button>
+</StackLayout>
