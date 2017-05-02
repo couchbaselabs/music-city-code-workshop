@@ -26,7 +26,7 @@ app.get("/movies/:id?", function(request, response) {
     if(request.params.id) {
         statement += " WHERE META().id = ?";
     }
-    bucket.query(N1qlQuery.fromString(statement), [request.params.id], function(error, result) {
+    bucket.query(N1qlQuery.fromString(statement).consistency(N1qlQuery.Consistency.REQUEST_PLUS), [request.params.id], function(error, result) {
         if(error) {
             return response.status(500).send(error);
         }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Location } from "@angular/common";
 import { Http } from "@angular/http";
 import { Router } from "@angular/router";
 import "rxjs/Rx";
@@ -12,11 +13,18 @@ export class ListComponent implements OnInit {
 
     public movies: any;
 
-    public constructor(private http: Http, private router: Router) {
+    public constructor(private http: Http, private router: Router, private location: Location) {
         this.movies = [];
     }
 
     public ngOnInit() {
+        this.location.subscribe(() => {
+            this.query();
+        });
+        this.query();
+    }
+
+    public query() {
         this.http.get("http://localhost:3000/movies")
             .map(result => result.json())
             .subscribe(result => {
@@ -38,6 +46,10 @@ export class ListComponent implements OnInit {
 
     public create() {
         this.router.navigate(["/create"]);
+    }
+
+    public update(id: string) {
+        this.router.navigate(["/update", id]);
     }
 
 }

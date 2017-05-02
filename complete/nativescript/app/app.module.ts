@@ -6,7 +6,7 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
 import { ListComponent } from "./components/list/list.component";
-import { CreateComponent } from "./components/create/create.component";
+import { SaveComponent } from "./components/save/save.component";
 
 @NgModule({
     bootstrap: [
@@ -21,7 +21,7 @@ import { CreateComponent } from "./components/create/create.component";
     declarations: [
         AppComponent,
         ListComponent,
-        CreateComponent
+        SaveComponent
     ],
     providers: [],
     schemas: [

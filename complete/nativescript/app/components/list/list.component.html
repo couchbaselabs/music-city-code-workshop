@@ -6,7 +6,7 @@
         <ng-template let-movie="item">
             <StackLayout class="list-group-item">
                 <GridLayout rows="auto" columns="*, auto">
-                    <StackLayout row="0" col="0">
+                    <StackLayout row="0" col="0" (tap)="update(movie.id)">
                         <Label text="{{ movie.title }}" class="font-weight-bold"></Label>
                         <Label text="{{ movie.genre }}" class="footnote"></Label>
                     </StackLayout>

@@ -3,11 +3,12 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 
 import { ListComponent } from "./components/list/list.component";
-import { CreateComponent } from "./components/create/create.component";
+import { SaveComponent } from "./components/save/save.component";
 
 const routes: Routes = [
     { path: "", component: ListComponent },
-    { path: "create", component: CreateComponent }
+    { path: "create", component: SaveComponent },
+    { path: "update/:id", component: SaveComponent }
 ];
 
 @NgModule({
