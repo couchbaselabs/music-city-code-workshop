@@ -381,3 +381,5 @@ Couchbase - [https://www.couchbase.com](https://www.couchbase.com)
 NativeScript - [https://www.nativescript.org](https://www.nativescript.org)
 
 Node.js - [https://www.nodejs.org](https://www.nodejs.org)
+
+DevNexus Java Workshop - [https://github.com/couchbaselabs/devnexus-java-workshop](https://github.com/couchbaselabs/devnexus-java-workshop)
