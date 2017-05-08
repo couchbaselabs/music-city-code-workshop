@@ -1,0 +1,10 @@
+@import 'nativescript-theme-core/css/core.light.css';
+
+.btn {
+    margin: 0;
+}
+
+.btn-danger {
+    background-color: red;
+    color: #FFFFFF;
+}
