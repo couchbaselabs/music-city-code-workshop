@@ -2,14 +2,7 @@
     <NavigationButton text="Back" ios.position="left"></NavigationButton>
 </ActionBar>
 <StackLayout class="form">
-    <StackLayout class="input-field">
-        <Label class="label" text="Title:"></Label>
-        <TextField hint="Title" [(ngModel)]="movie.title" class="input input-border"></TextField>
-    </StackLayout>
-    <StackLayout class="input-field">
-        <Label class="label" text="Genre:"></Label>
-        <TextField hint="Genre" [(ngModel)]="movie.genre" class="input input-border"></TextField>
-    </StackLayout>
+    <!-- STEP 02: Form Bound Input in a Mobile Application -->
     <StackLayout class="input-field">
         <Button text="Save" class="btn btn-primary" (tap)="save()"></Button>
     </StackLayout>

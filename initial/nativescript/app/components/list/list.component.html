@@ -2,19 +2,5 @@
     <ActionItem text="New" ios.position="right" (tap)="create()"></ActionItem>
 </ActionBar>
 <GridLayout>
-    <ListView [items]="movies" class="list-group">
-        <ng-template let-movie="item">
-            <StackLayout class="list-group-item">
-                <GridLayout rows="auto" columns="*, auto">
-                    <StackLayout row="0" col="0" (tap)="update(movie.id)">
-                        <Label text="{{ movie.title }}" class="font-weight-bold"></Label>
-                        <Label text="{{ movie.genre }}" class="footnote"></Label>
-                    </StackLayout>
-                    <StackLayout row="0" col="1">
-                        <Button text="DEL" class="btn btn-danger" (tap)="delete(movie.id)"></Button>
-                    </StackLayout>
-                </GridLayout>
-            </StackLayout>
-        </ng-template>
-    </ListView>
+    <!-- STEP 01: Listing Data in a Mobile Application -->
 </GridLayout>

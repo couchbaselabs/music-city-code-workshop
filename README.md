@@ -286,6 +286,63 @@ With success, the project should be running at http://localhost:4200. Make sure 
 
 ### Bringing the Client Frontend to Android and iOS with NativeScript
 
+Bringing an application to Android and iOS is often a means in completing a development stack. Having a database, backend, web front-end, and mobile front-end is a great example of a full stack application and full stack development.
+
+Being that the web front-end is Angular, it makes sense to use an Angular framework for mobile as well to reduce code differences. NativeScript with Angular provides that power.
+
+Open the project, **initial/nativescript**, as all development will be done here.
+
+#### Step 01 - Listing Data in a Mobile Application
+
+Between an Angular web application and an Angular NativeScript application there are few to no changes when it comes to the TypeScript code. In the example of this workshop, the component logic can be copied 100% between web and mobile.
+
+Instead, there are differences in the HTML markup. Take for example listing data found in an array:
+
+```
+<ListView [items]="people">
+    <ng-template let-person="item">
+        <Label text="{{ person.firstname }}"></Label>
+    </ng-template>
+</ListView>
+```
+
+In the above example there is an array in the TypeScript called `people` and it is iterated over and displayed in a NativeScript `Label`. While CSS can be copied between web and mobile, the HTML components cannot be.
+
+NativeScript has its own layouts instead of HTML `div` tags. Each row of the list can have layouts such as `GridLayout` or `StackLayout`, but not limited to the two. More information on the available layouts can be found in the User [Interface Layouts](https://docs.nativescript.org/ui/layouts) documentation.
+
+Open the project's **app/components/list/list.component.html** file and find the first step. The goal here is to list the data consumed from the Node.js API.
+
+#### Step 02 - Form Bound Input in a Mobile Application
+
+Lists are not the only components unique to NativeScript. Forms are created a little differently, but in a very familiar fashion.
+
+Take the example of the following form element:
+
+```
+<StackLayout class="input-field">
+    <Label class="label" text="First Name:"></Label>
+    <TextField hint="First Name" [(ngModel)]="firstname" class="input input-border"></TextField>
+</StackLayout>
+```
+
+The above markup will create an input field bound to a TypeScript variable called `firstname`. This input field will have text above it, like you'd find in an HTML form.
+
+Within the project's **app/components/save/save.component.html** file, find the second step. The goal is to create a form that is bound to the TypeScript code so HTTP requests can be made against the server.
+
+#### Step 03 - Running the Application with the NativeScript CLI
+
+Creating a NativeScript application makes it easy to convert to web or the other direction, hence so few steps. With Couchbase Server and the Node.js API running, the NativeScript mobile application can be tested.
+
+To run the NativeScript application on Android, the Android SDK must be installed and configured. To run the application on iOS, Xcode must be installed and configured. Xcode is only available for macOS users.
+
+From the NativeScript CLI, execute the following command:
+
+```
+tns emulate android
+```
+
+The `android` used above can easily be swapped with `ios`. In either scenario, a simulator should be launched if each Android and iOS were properly configured.
+
 ## Resources
 
 Angular - [https://www.angular.io](https://www.angular.io)
