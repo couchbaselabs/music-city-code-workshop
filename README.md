@@ -31,6 +31,35 @@ The **initial** project is broken into four parts, where each part is essentiall
 
 ### Deploying Couchbase and Becoming Familiar with NoSQL
 
+In any full stack application, a database is required. For this workshop, NoSQL will be the theme and Couchbase will fulfill that theme.
+
+The JSON data stored as NoSQL documents, at a minimum, will be modeled like this:
+
+```
+{
+    "title": "Batman",
+    "genre": "Fantasy / Action"
+}
+```
+
+The theme of the full stack application will be a movie database.
+
+#### Step 01 - Installing Couchbase Server
+
+There are numerous ways to install Couchbase Server. For example, one could use Docker or one of the available AWS or Azure images. For this workshop, the Mac, Windows, or Linux binary will be installed directly onto the working machine.
+
+[Download](https://www.couchbase.com/download) Couchbase Server and walk through the short setup wizard found at http://localhost:8091. The defaults are fine for this workshop.
+
+#### Step 02 - Creating a Primary Index for N1QL
+
+SQL queries with the Couchbase N1QL syntax will be used throughout the Node.js section of this workshop. For most circumstances, an index is required for querying. In development mode, a primary index can be used:
+
+```
+CREATE PRIMARY INDEX ON `default`;
+```
+
+Within the Couchbase Query Workbench found in the administrative dashboard, execute the query above. In a production environment, specific indexes should be created on a per query basis to maximize performance. Primary indexes have very poor performance by comparison.
+
 ### Building a RESTful API with Node.js and Couchbase Server
 
 The goal of this section is to create a RESTful API that can be consumed from any front-end client. This API is powered by Node.js with Express as the logic layer and supplied with data from Couchbase Server.
